@@ -46,7 +46,7 @@ Write-Host $validateQueue
 If ($rawQueueInt -gt $alarmThreshold) {
     Write-Warning "Large Queue trigger invoking";
     Write-Output "Doing SMTP mail";
-    Send-MailMessage -from "noreply@domain.com" -to "notify@domain.com", "notify2@self.com" -subject "DFS Queue Warning: No user action required" -body "Backlog Queue Threshold of $alarmThreshold exceeded." -SmtpServer 192.168.20.10;
+    Send-MailMessage -from "noreply@domain.com" -to "notify@domain.com", "notify2@self.com" -subject "DFS Queue Warning: No user action required" -body "Backlog Queue Threshold of $alarmThreshold exceeded." -SmtpServer 192.168.0.10;
     }
     Else {Write-Host "Queue size for recent checks below threshold. No notifcation triggered."
     }
